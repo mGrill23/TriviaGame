@@ -1,3 +1,20 @@
+var questions = [
+    {
+      question: "When was the original Mad Max movie released in Australlia?",
+      answers: ["March 1, 1979", "Febuary 13, 1978", "April 12, 1979", "December 24, 2001"],
+      correctAnswer: "April 12, 1979"
+    },
+    {
+      question: "The actor who played Immortal Joe also played another character in the first movie.  Who was it?",
+      answers: ["Facesplitter", "Toecutter", "Bonemelter", "Legsmasher"],
+      correctAnswer: "Toecutter"
+    },
+    {
+      question: "What is the title that the antagonist 'joe' have?",
+      answers: ["Imperishable", "Immortal", "Irresistable", "The Annialator"],
+      correctAnswer: "Immortal"
+    },
+];
 
 var timer
 
@@ -35,6 +52,6 @@ var game={
         card.append("<button id='done'>Done</button>");
     },
 
-    
+
 }
 
