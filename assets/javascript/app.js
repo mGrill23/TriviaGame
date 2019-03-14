@@ -52,6 +52,34 @@ var game={
         card.append("<button id='done'>Done</button>");
     },
 
+    done: function() {
+        var inputs = card.children("input:checked");
+        for (var i = 0; i < inputs.length; i++) {
+          if ($(inputs[i]).val() === questions[i].correctAnswer) {
+            game.correct++;
+          } else {
+            game.incorrect++;
+          }
+        }
+        this.result();
+    },
 
+    result: function() {
+        clearInterval(timer);
+    
+        $("#sub-wrapper h2").remove();
+    
+        card.html("<h2>All Done!</h2>");
+        card.append("<h3>Correct Answers: " + this.correct + "</h3>");
+        card.append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
+    }
 }
 
+
+$(document).on("click", "#start", function() {
+    game.start();
+  });
+  
+  $(document).on("click", "#done", function() {
+    game.done();
+  });
